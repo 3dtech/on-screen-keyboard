@@ -1,0 +1,33 @@
+{
+  "name": "on-screen-keyboard",
+  "version": "1.0.0",
+  "description": "A vanilla JavaScript on screen keyboard",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/3dtech/on-screen-keyboard.git"
+  },
+  "keywords": [
+    "js",
+    "on",
+    "screen",
+    "keyboard",
+    "touch"
+  ],
+  "author": "Taavi Juursalu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/3dtech/on-screen-keyboard/issues"
+  },
+  "homepage": "https://github.com/3dtech/on-screen-keyboard#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-uglify": "^2.3.0"
+  }
+}

@@ -1,0 +1,15 @@
+{
+	"name": "Norwegian",
+	"keyboard":"Norwegian",
+	"local_name": "English",
+	"lang": "en",
+	"keys": {
+		"default": [
+			["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", {"key": "&#171; Bksp", "action": ["backspace"], "cls": "key2x"}],
+			["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "\u00E5"],
+			["a", "s", "d", "f", "g", "h", "j", "k", "l", "\u00f8", "\u00e6"],
+			["z", "x", "c", "v", "b", "n", "m", ",", "-"],
+			[{"key": " ", "cls": "key_spacebar"}]
+			]
+		}
+}

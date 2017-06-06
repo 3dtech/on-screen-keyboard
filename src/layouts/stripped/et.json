@@ -1,0 +1,14 @@
+{
+	"name": "Estonian",
+	"local_name": "Eesti",
+	"lang": "et",
+	"keys": {
+		"default": [
+			["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", {"key": "&#171; Bksp", "action": ["backspace"], "cls": "key2x"}],
+			["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "\u00FC", "\u00F5"],
+			["a", "s", "d", "f", "g", "h", "j", "k", "l", "\u00F6", "\u00E4", {"key": "Enter", "action": ["submit"], "cls": "key3x"}],
+			["z", "x", "c", "v", "b", "n", "m"],
+			[{"key": " ", "cls": "key_spacebar"}]
+			]
+	}
+}

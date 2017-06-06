@@ -1,0 +1,42 @@
+{
+	'name': "Estonian",
+	'local_name': "Eesti",
+	'lang': "et",
+	'keys': {
+		"default": [
+			["\u02C7", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "+", "\u00B4", {'key': "&#171; Bksp", 'action': ["backspace"], 'cls': "key2x"}],
+			[{'key': "Tab", 'action': ["tab"], 'cls': "key2x"}, "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "\u00FC", "\u00F5", "'"],
+			[{'key': "Caps", 'action': ["change_keyset", "capslck"], 'cls': "key2x"}, "a", "s", "d", "f", "g", "h", "j", "k", "l", "\u00F6", "\u00E4", {'key': "Enter", 'action': ["submit"], 'cls': "key3x"}],
+			[{'key': "Shift", 'action': ["change_keyset", "shift"], 'cls': "key2x"}, "<", "z", "x", "c", "v", "b", "n", "m", ",", ".", "-", {'key': "Shift", 'action': ["change_keyset", "shift"], 'cls': "key2x"}],
+			[{'key': "AltCr", 'action': ["change_keyset", "altgr"], 'cls': "key2x"}, {"key": " ", "cls": "key_spacebar"}, {'key': "AltCr", 'action': ["change_keyset", "altgr"], 'cls': "key2x"}]
+			],
+		"capslck": [
+			["\u02C7", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "+", "\u00B4", {'key': "&#171; Bksp", 'action': "backspace", 'cls': "key2x"}],
+			[{'key': "Tab", 'action': ["tab"], 'cls': "key2x"}, "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "\u00DC", "\u00D5", "'"],
+			[{'key': "Caps", 'action': ["change_keyset", "default"], 'cls': "key2x active"}, "A", "S", "D", "F", "G", "H", "J", "K", "L", "\u00D6", "\u00C4", {'key': "Enter", 'action': ["submit"], 'cls': "key3x"}],
+			[{'key': "Shift", 'action': ["change_keyset", "shift"], 'cls': "key2x"}, "<", "Z", "X", "C", "V", "B", "N", "M", ",", ".", "-", {'key': "Shift", 'action': ["change_keyset", "shift"], 'cls': "key2x"}],
+			[{'key': "AltCr", 'action': ["change_keyset", "altgr"], 'cls': "key2x"}, {"key": " ", "cls": "key_spacebar"}, {'key': "AltCr", 'action': ["change_keyset", "altgr"], 'cls': "key2x"}]
+			],
+		"shift": [
+			["~", "!", "\"", "@", "#", "%", "&", "/", "(", ")", "=", "?", "`", {'key': "&#171; Bksp", 'action': "backspace", 'cls': "key2x"}],
+			[{'key': "Tab", 'action': ["tab"], 'cls': "key2x"}, "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "\u00DC", "\u00D5", "*"],
+			[{'key': "Caps", 'action': ["change_keyset", "capslck"], 'cls': "key2x"}, "A", "S", "D", "F", "G", "H", "J", "K", "L","\u00D6", "\u00C4", {'key': "Enter", 'action': ["submit"], 'cls': "key3x"}],
+			[{'key': "Shift", 'action': ["change_keyset", "default"], 'cls': "key2x active"}, ">", "Z", "X", "C", "V", "B", "N", "M", ",", ".", "-", {'key': "Shift", 'action': ["change_keyset", "default"], 'cls': "key2x active"}],
+			[{'key': "AltCr", 'action': ["change_keyset", "altgr"], 'cls': "key2x"}, {"key": " ", "cls": "key_spacebar"}, {'key': "AltCr", 'action': ["change_keyset", "altgr"], 'cls': "key2x"}]
+			],
+		"altgr": [
+			["", "", "@", "\u00A3", "$", "€", "", "{", "[", "]", "}", "\\", "", {'key': "&#171; Bksp", 'action': "backspace", 'cls': "key2x"}],
+			[{'key': "Tab", 'action': ["tab"], 'cls': "key2x"}, "", "€", "", "", "", "", "", "", "", "", "", "\u00A7", ""],
+			[{'key': "Caps", 'action': ["change_keyset", "default"], 'cls': "key2x"}, "", "\u0161", "", "", "", "", "", "", "", "", "", {'key': "Enter", 'action': ["submit"], 'cls': "key3x"}],
+			[{'key': "Shift", 'action': ["change_keyset", "altgr_shift"], 'cls': "key2x"}, "", "\u017E", "", "", "", "", "", "", "", "", "", {'key': "Shift", 'action': ["change_keyset", "default"], 'cls': "key2x"}],
+			[{'key': "AltCr", 'action': ["change_keyset", "default"], 'cls': "key2x active"}, {"key": " ", "cls": "key_spacebar"}, {'key': "AltCr", 'action': ["change_keyset", "default"], 'cls': "key2x active"}]
+			],
+		"altgr_shift": [
+			["", "", "@", "\u00A3", "$", "", "", "{", "[", "]", "}", "\\", "", {'key': "&#171; Bksp", 'action': "backspace", 'cls': "key2x"}],
+			[{'key': "Tab", 'action': ["tab"], 'cls': "key2x"}, "", "", "", "", "", "", "", "", "", "", "", "\u00A7", ""],
+			[{'key': "Caps", 'action': ["change_keyset", "default"], 'cls': "key2x"}, "", "\u0160", "", "", "", "", "", "", "", "", "", {'key': "Enter", 'action': ["submit"], 'cls': "key3x"}],
+			[{'key': "Shift", 'action': ["change_keyset", "altgr"], 'cls': "key2x active"}, "", "\u017D", "", "", "", "", "", "", "", "", "", {'key': "Shift", 'action': ["change_keyset", "default"], 'cls': "key2x active"}],
+			[{'key': "AltCr", 'action': ["change_keyset", "default"], 'cls': "key2x active"}, {"key": " ", "cls": "key_spacebar"}, {'key': "AltCr", 'action': ["change_keyset", "altgr"], 'cls': "key2x active"}]
+			]
+	}
+}

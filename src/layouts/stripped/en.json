@@ -1,0 +1,22 @@
+{
+	"name": "English",
+	"keyboard":"US International",
+	"local_name": "English",
+	"lang": "en",
+	"keys": {
+		"default": [
+			["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", {"key": "&#171; Bksp", "action": ["backspace"], "cls": "key2x"}],
+			["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"],
+			["a", "s", "d", "f", "g", "h", "j", "k", "l", {"key": "Enter", "action": ["submit"], "cls": "key3x"}],
+			[{"key": "Shift", "action": ["change_keyset", "shift"], "cls": "key2x"}, "z", "x", "c", "v", "b", "n", "m", {"key": "Shift", "action": ["change_keyset", "shift"], "cls": "key2x"}],
+			[{"key": " ", "cls": "key_spacebar"}]
+			],
+		"shift": [
+			["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", {"key": "&#171; Bksp", "action": "backspace", "cls": "key2x"}],
+			["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"],
+			["A", "S", "D", "F", "G", "H", "J", "K", "L", {"key": "Enter", "action": ["submit"], "cls": "key3x"}],
+			[{"key": "Shift", "action": ["change_keyset", "default"], "cls": "key2x active"}, "Z", "X", "C", "V", "B", "N", "M", {"key": "Shift", "action": ["change_keyset", "default"], "cls": "key2x active"}],
+			[{"key": " ", "cls": "key_spacebar"}]
+			]
+	}
+}

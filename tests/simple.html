@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script src="../src/Keyboard.js"></script>
+	<script src="../src/KeyboardLayouts.js"></script>
+	<script src="../src/KeyboardActions.js"></script>
+	<link rel="stylesheet" href="../src/css/keyboard.css" media="all">
+</head>
+
+<body>
+	<h1>Keyboard usage example</h1>
+	<input type="text" id="keyboard_input"/>
+	<script type="text/javascript">
+		(function(){
+			console.log("keyboard", Keyboard)
+			var keyboard = new Keyboard("keyboard_input");
+		}());
+
+	</script>
+</body>
+
+</html>
