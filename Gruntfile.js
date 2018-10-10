@@ -41,7 +41,16 @@ module.exports = function (grunt) {
                 output: {
                     filename: 'keyboard.js',
                     library: 'OSK',
-                    libraryTarget: 'umd',
+                    libraryTarget: 'commonjs2',
+                    libraryExport: 'OSK',
+                }
+            },
+            amd: {
+                entry: './index.js',
+                output: {
+                    filename: 'keyboard-amd.js',
+                    library: 'OSK',
+                    libraryTarget: 'amd',
                     libraryExport: 'OSK',
                 }
             }

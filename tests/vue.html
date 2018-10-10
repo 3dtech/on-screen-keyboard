@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Getting started with webpack and ES6 modules – the demo</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="../dist/css/osk.css" />
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            body {
+                font-family: sans-serif;
+                margin: 0 auto;
+                max-width: 30rem;
+            }
+            a {
+                color: RoyalBlue;
+            }
+            .results {
+                background-color: WhiteSmoke;
+                display: inline-block;
+                margin: 1rem 0;
+                padding: .5rem 1.5rem;
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Getting started with webpack and ES6 modules – the demo</h1>
+        <div id="app">
+            <input id="keyboard-input"/>
+            <h3>{{ message }}</h3>
+        </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="../dist/keyboard.js"></script>
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    message: 'Hello Vue!',
+                    keyboard: false
+                },
+                mounted () {
+                    console.log('mounted');
+                    this.keyboard = new OSK('keyboard-input');
+                }
+            });
+        </script>
+    </body>
+</html>
