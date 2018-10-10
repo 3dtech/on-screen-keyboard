@@ -1,0 +1,39 @@
+.keyboard {
+	user-select: none;
+	display: flex;
+	flex-direction: column;
+}
+
+.keyboard-row {
+	margin: auto;
+	clear: both;
+	display: flex;
+}
+
+.keyboard-key {
+	text-align: center;
+	width: 2em;
+	height: 2em;
+	font-size: 1.2em;
+	line-height: 2em;
+	overflow: hidden;
+	user-select: none;
+}
+
+.keyboard-key-active {
+}
+
+.keyboard-key_pressed {
+}
+
+.keyboard.key2x {
+	width: 4em;
+}
+
+.keyboard-key3x {
+	width: 6em;
+}
+
+.keyboard-key-spacebar {
+	width: 18em;
+}

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Getting started with webpack and ES6 modules – the demo</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../dist/css/osk.css" />
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            body {
+                font-family: sans-serif;
+                margin: 0 auto;
+                max-width: 30rem;
+            }
+            a {
+                color: RoyalBlue;
+            }
+            .results {
+                background-color: WhiteSmoke;
+                display: inline-block;
+                margin: 1rem 0;
+                padding: .5rem 1.5rem;
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Getting started with webpack and ES6 modules – the demo</h1>
+        <input id="keyboard-input"/>
+
+        <script src="../dist/keyboard.js"></script>
+        <script>
+            (function() {
+                console.log(typeof OSK, OSK);
+                var keyboard = new OSK('keyboard-input');
+                console.log('Keyboard', keyboard);
+            })();
+        </script>
+    </body>
+</html>

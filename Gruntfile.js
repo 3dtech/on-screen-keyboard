@@ -6,6 +6,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-webpack');
 
     grunt.initConfig({
         distdir: 'dist',
@@ -14,12 +15,7 @@ module.exports = function (grunt) {
         banner: "/*! On Screen Keyboard written in vanilla JS*/\n",
         copy: {
             css: {
-                files: [{
-                    expand: true,
-                    cwd: '<%= srcdir %>/css/*.css',
-                    src: ['**/*'],
-                    dest: '<%= distdir %>/css/'
-                }]
+                files: [ { src: './<%= srcdir %>/css/*.css', dest: './<%= distdir %>/css/', filter: 'isFile', flatten: true, expand: true} ]
             }
         },
         concat: {
@@ -38,14 +34,25 @@ module.exports = function (grunt) {
                     drop_console: true
                 }
             }
+        },
+        webpack: {
+            default: {
+                entry: './index.js',
+                output: {
+                    filename: 'keyboard.js',
+                    library: 'OSK',
+                    libraryTarget: 'umd',
+                    libraryExport: 'OSK',
+                }
+            }
         }
     });
 
     grunt.registerTask('default', function(target) {
         grunt.task.run([
             'clean',
-            'concat:js',
-            'copy'
+            'webpack',
+            'copy:css'
         ]);
     });
 };
