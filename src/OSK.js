@@ -95,7 +95,7 @@ export default class OSK {
 				console.warn('Input field not found', output);
 				return;
 			} 
-			if (his.output.tagName.toLowerCase() !== "input") {
+			if (this.output.tagName.toLowerCase() !== "input") {
 				this.outputIsInputField = false;
 			}
 		} else {
