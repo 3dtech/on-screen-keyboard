@@ -92,7 +92,7 @@ export default class OSK {
 		if (typeof output === "string") {
 			this.output = document.getElementById(output);
 			if(!this.output) {
-				console.warn('Input field not found', outpur);
+				console.warn('Input field not found', output);
 				return;
 			} 
 			if (his.output.tagName.toLowerCase() !== "input") {
