@@ -17,6 +17,7 @@
     "keyboard",
     "touch"
   ],
+  "module": "dist/keyboard.js",
   "author": "Taavi Juursalu",
   "license": "MIT",
   "bugs": {
