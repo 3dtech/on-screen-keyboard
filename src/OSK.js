@@ -115,7 +115,7 @@ export default class OSK {
 				this.updateFromOutput();
 			});
 
-			this.output.addEventListener("onchange", () => {
+			this.output.addEventListener("input", () => {
 				this.updateFromOutput();
 			});
 		}
@@ -192,6 +192,12 @@ export default class OSK {
 			this.keyReleased(event.target);
 		});
 
+		///remove text selection
+		if(this.container !== undefined){
+			this.container.onselectstart = function() {return false;}; // ie
+			this.container.onmousedown = function() {return false;}; // mozilla (this disables the search box)
+		}
+
 		this.rescale();
 	}
 
@@ -263,12 +269,14 @@ export default class OSK {
 		this.value = "" + start + char + end;
 		this.selectionStart += char.length;
 		this.selectionEnd = this.selectionStart;
+		console.log('changeValue', this.selectionStart, char.length)
 	}
 
 	pushtoOutput () {
 		if (this.output) {
 			if (this.outputIsInputField) {
 				this.output.value = this.value;
+				console.log('pushToOutput', this.selectionStart)
 				this.output.selectionStart = this.selectionStart;
 				this.output.selectionEnd = this.selectionEnd;
 			} else {
@@ -289,6 +297,7 @@ export default class OSK {
 	getCaretPosition () {
 		if (this.output) {
 			if (this.outputIsInputField) {
+				console.log('getCaretPosition', this.output.selectionStart, this.output.selectionEnd)
 				this.selectionStart = this.output.selectionStart;
 				this.selectionEnd = this.output.selectionEnd;
 			}

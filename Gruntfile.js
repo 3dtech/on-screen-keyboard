@@ -39,19 +39,32 @@ module.exports = function (grunt) {
             default: {
                 entry: './index.js',
                 output: {
-                    filename: 'keyboard.js',
+                    filename: 'osk.esm.js',
+                },
+                module: {
+                    rules: [{
+                            test: /\.js$/,
+                            type: 'javascript/esm',
+                            exclude: /node_modules/
+                        }
+                    ]
+                }
+            },
+            common: {
+                entry: './index.js',
+                output: {
+                    filename: 'osk.common.js',
                     library: 'OSK',
                     libraryTarget: 'commonjs2',
                     libraryExport: 'OSK',
                 }
             },
-            amd: {
+            library: {
                 entry: './index.js',
                 output: {
-                    filename: 'keyboard-amd.js',
+                    filename: 'osk.min.js',
                     library: 'OSK',
-                    libraryTarget: 'amd',
-                    libraryExport: 'OSK',
+                    libraryTarget: 'var'
                 }
             }
         }

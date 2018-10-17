@@ -2,10 +2,8 @@
 <html>
 
 <head>
-	<script src="../src/Keyboard.js"></script>
-	<script src="../src/KeyboardLayouts.js"></script>
-	<script src="../src/KeyboardActions.js"></script>
-	<link rel="stylesheet" href="../src/css/keyboard.css" media="all">
+	<script src="../dist/osk.min.js"></script>
+	<link rel="stylesheet" href="../dist/css/osk.css" media="all">
 </head>
 
 <body>
@@ -13,8 +11,7 @@
 	<input type="text" id="keyboard_input"/>
 	<script type="text/javascript">
 		(function(){
-			console.log("keyboard", Keyboard)
-			var keyboard = new Keyboard("keyboard_input");
+			var keyboard = new OSK.OSK("keyboard_input");
 		}());
 
 	</script>
