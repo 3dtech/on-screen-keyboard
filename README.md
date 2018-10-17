@@ -2,17 +2,22 @@
 A vanilla JavaScript on screen keyboard
 
 # Install
+```
 npm install on-screen-js-keyboard
+```
 
 # Usage
+```
 import OSK from 'on-screen-js-keyboard';
 
 this.keyboard = new OSK('input', 'keyboard-container'); // input field id, container id 
 this.keyboard.on('change', (keyword) => {
 	//do somehting
 });
+```
 
 # Add new layout
+```
 this.keyboard.addLayout('no', {
 	"name": "Norwegian",
 	"keyboard":"Norwegian",
@@ -28,3 +33,4 @@ this.keyboard.addLayout('no', {
 			]
 		}
 });
+```
