@@ -5,6 +5,10 @@ A vanilla JavaScript on screen keyboard
 ```
 npm install on-screen-js-keyboard
 ```
+or
+```
+<script src="node_modules/on-screen-js-keyboard/dist/osk.min.js"></script>
+```
 
 # Usage
 ```
