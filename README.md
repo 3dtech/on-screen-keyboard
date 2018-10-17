@@ -14,15 +14,15 @@ or
 ```
 import OSK from 'on-screen-js-keyboard';
 
-this.keyboard = new OSK('input', 'keyboard-container'); // input field id, container id 
-this.keyboard.on('change', (keyword) => {
+let keyboard = new OSK('input', 'keyboard-container'); // input field id, container id 
+keyboard.on('change', (keyword) => {
 	//do somehting
 });
 ```
 
-# Add new layout
+## Add new layout
 ```
-this.keyboard.addLayout('no', {
+keyboard.addLayout('no', {
 	"name": "Norwegian",
 	"keyboard":"Norwegian",
 	"local_name": "English",
@@ -37,4 +37,16 @@ this.keyboard.addLayout('no', {
 			]
 		}
 });
+```
+
+## Change input field
+```
+keyboard.setOutput('other-input'); // ID of input field
+```
+
+or
+
+```
+let otherInput = document.getElementById('other-input');
+keyboard.setOutput(otherInput); // ID of input field
 ```
