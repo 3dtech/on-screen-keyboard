@@ -17,7 +17,7 @@
     "keyboard",
     "touch"
   ],
-  "module": "dist/osk.esm.js",
+  "module": "dist/osk.common.js",
   "main": "dist/osk.common.js",
   "author": "Taavi Juursalu",
   "license": "MIT",

@@ -40,14 +40,6 @@ module.exports = function (grunt) {
                 entry: './index.js',
                 output: {
                     filename: 'osk.esm.js',
-                },
-                module: {
-                    rules: [{
-                            test: /\.js$/,
-                            type: 'javascript/esm',
-                            exclude: /node_modules/
-                        }
-                    ]
                 }
             },
             common: {

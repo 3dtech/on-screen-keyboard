@@ -6,6 +6,7 @@ export default class OSK {
 		this.layoutName = (defaultLayout === undefined ? "en" : defaultLayout);
 		this.keyset = "default";
 		this.container = false;
+		this.containerListenerAdded = false;
 
 		this.setContainer(container);
 
@@ -156,7 +157,6 @@ export default class OSK {
 		this.clear();
 		let html = "";
 		let keyset = this.getCurrentKeyset();
-		let c = this.container;
 
 		for (let r in keyset) {
 			html += "<div class='keyboard-row keyboard-row-" + r + "'>";
@@ -177,23 +177,26 @@ export default class OSK {
 
 			}
 			html += "</div>";
-
 		}
 
 		this.container.insertAdjacentHTML("beforeend", html);
 
-		this.container.addEventListener("mousedown", (event) => {
-			this.getCaretPosition();
-			this.keyPressed(event.target);
-			
-		});
+		if (!this.containerListenerAdded) {
+			this.container.addEventListener("mousedown", (event) => {
+				this.getCaretPosition();
+				this.keyPressed(event.target);
+				event.stopPropagation();
+				event.preventDefault();
+				
+			});
 
-		this.container.addEventListener("mouseup", (event) => {
-			this.keyReleased(event.target);
-		});
+			this.container.addEventListener("mouseup", (event) => {
+				this.keyReleased(event.target);
+				event.stopPropagation();
+			});
 
-		///remove text selection
-		if(this.container !== undefined){
+			this.containerListenerAdded = true;
+
 			this.container.onselectstart = function() {return false;}; // ie
 			this.container.onmousedown = function() {return false;}; // mozilla (this disables the search box)
 		}
@@ -269,14 +272,12 @@ export default class OSK {
 		this.value = "" + start + char + end;
 		this.selectionStart += char.length;
 		this.selectionEnd = this.selectionStart;
-		console.log('changeValue', this.selectionStart, char.length)
 	}
 
 	pushtoOutput () {
 		if (this.output) {
 			if (this.outputIsInputField) {
 				this.output.value = this.value;
-				console.log('pushToOutput', this.selectionStart)
 				this.output.selectionStart = this.selectionStart;
 				this.output.selectionEnd = this.selectionEnd;
 			} else {
@@ -297,7 +298,6 @@ export default class OSK {
 	getCaretPosition () {
 		if (this.output) {
 			if (this.outputIsInputField) {
-				console.log('getCaretPosition', this.output.selectionStart, this.output.selectionEnd)
 				this.selectionStart = this.output.selectionStart;
 				this.selectionEnd = this.output.selectionEnd;
 			}
