@@ -39,6 +39,11 @@ keyboard.addLayout('no', {
 });
 ```
 
+## Change layout
+```
+keyboard.changeLayout('no');
+```
+
 ## Change input field
 ```
 keyboard.setOutput('other-input'); // ID of input field
@@ -48,5 +53,5 @@ or
 
 ```
 let otherInput = document.getElementById('other-input');
-keyboard.setOutput(otherInput); // ID of input field
+keyboard.setOutput(otherInput); // Input field reference
 ```
