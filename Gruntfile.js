@@ -58,6 +58,17 @@ module.exports = function (grunt) {
                     library: 'OSK',
                     libraryTarget: 'var'
                 }
+            },
+            dist: {
+                entry: './index.js',
+                output: {
+                    filename: 'osk.js',
+                    library: 'OSK',
+                    libraryTarget: 'var'
+                },
+                optimization: {
+                    minimize: false
+                }
             }
         }
     });

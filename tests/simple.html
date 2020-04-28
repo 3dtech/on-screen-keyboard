@@ -12,6 +12,9 @@
 	<script type="text/javascript">
 		(function(){
 			var keyboard = new OSK.OSK("keyboard_input");
+			keyboard.on('change', function (keyword) {
+				console.log('change', keyword);
+			})
 		}());
 
 	</script>

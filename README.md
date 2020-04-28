@@ -55,3 +55,9 @@ or
 let otherInput = document.getElementById('other-input');
 keyboard.setOutput(otherInput); // Input field reference
 ```
+
+## Build
+```
+npm install grunt -g
+grunt
+```
