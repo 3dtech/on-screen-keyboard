@@ -135,8 +135,10 @@ export default class OSK {
 	}
 
 	clear () {
-		while (this.container.firstChild) {
-			this.container.removeChild(this.container.firstChild);
+		if (this.container) {
+			while (this.container.firstChild) {
+				this.container.removeChild(this.container.firstChild);
+			}
 		}
 	}
 
@@ -207,8 +209,11 @@ export default class OSK {
 	}
 
 	rescale () {
+		if (!this.container) {
+			return;
+		}
+
 		let keyboard_height = 0;
-		let keyboard_width = 0;
 		let row;
 		let key;
 
