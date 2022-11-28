@@ -73,6 +73,13 @@ module.exports = function (grunt) {
         }
     });
 
+    grunt.registerTask('debug', function(target) {
+        grunt.task.run([
+            'webpack',
+            'copy:css'
+        ]);
+    });
+
     grunt.registerTask('default', function(target) {
         grunt.task.run([
             'clean',

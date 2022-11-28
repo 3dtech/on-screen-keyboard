@@ -233,18 +233,32 @@ class OSK_OSK {
 	}
 
 	setOutput (output) {
+		if (!output) {
+			console.warn('Input field not given', output);
+			return;
+		} 
+		let field;
+
 		if (typeof output === "string") {
-			this.output = document.getElementById(output);
+			field = document.getElementById(output);
+			this.output = field;
 			if(!this.output) {
 				console.warn('Input field not found', output);
 				return;
-			} 
-			if (this.output.tagName.toLowerCase() !== "input") {
-				this.outputIsInputField = false;
 			}
 		} else {
+			field = output;
 			this.output = output;
+			
 		}
+
+		if (this.getFieldType(this.output) !== "input") {
+			this.outputIsInputField = false;
+		}
+
+		let newVal = this.getFieldValue(field);
+		this.value = newVal;
+		this.selectionEnd = newVal.length;
 
 		if (this.output) {
 			this.output.addEventListener("focus", () => {
@@ -266,13 +280,23 @@ class OSK_OSK {
 		}
 	}
 
-	updateFromOutput () {
-		if (this.outputIsInputField) {
-			this.value = this.output.value;
-		} else {
-			this.value = this.output.innerText;
+	getFieldValue (field) {
+		if (!field) return "";
+		var type = this.getFieldType(field);
+		switch(type) {
+			case "input":
+				return field.value;
+			break;
+			case "textarea":
+				return field.innerText;
+			break;
+			default:
+				return "";
 		}
+	}
 
+	updateFromOutput () {
+		this.value = this.getFieldValue(this.output);
 		this.getCaretPosition();
 		
 	}
@@ -443,6 +467,10 @@ class OSK_OSK {
 
 			this.trigger('change', this.value);
 		}
+	}
+
+	getFieldType (field) {
+		return field && field.tagName ? field.tagName.toLowerCase() : "nan";
 	}
 
 	getCaretPosition () {

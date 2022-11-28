@@ -9,8 +9,19 @@
 <body>
 	<h1>Keyboard usage example</h1>
 	<input type="text" id="keyboard_input"/>
+	<input type="text" id="keyboard_input2"/>
 	<script type="text/javascript">
 		(function(){
+			var input1 = document.getElementById("keyboard_input");
+			var input2 = document.getElementById("keyboard_input2");
+			input1.addEventListener('click', (event) => {
+				console.log('in1')
+				keyboard.setOutput('keyboard_input')
+			});
+			input2.addEventListener('click', (event) => {
+				console.log('in2')
+				keyboard.setOutput('keyboard_input2')
+			});
 			var keyboard = new OSK.OSK("keyboard_input");
 			keyboard.on('change', function (keyword) {
 				console.log('change', keyword);
