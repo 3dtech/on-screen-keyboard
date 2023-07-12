@@ -16,7 +16,7 @@ import OSK from 'on-screen-js-keyboard';
 
 let keyboard = new OSK('input', 'keyboard-container'); // input field id, container id 
 keyboard.on('change', (keyword) => {
-	//do somehting
+	//do something
 });
 ```
 
