@@ -4,12 +4,23 @@
 <head>
 	<script src="../dist/osk.min.js"></script>
 	<link rel="stylesheet" href="../dist/css/osk.css" media="all">
+	<script>
+
+		function actionFnc (e) {
+			console.log('action')
+			e.preventDefault();
+			return false;
+		}
+	</script>
 </head>
 
 <body>
 	<h1>Keyboard usage example</h1>
-	<input type="text" id="keyboard_input"/>
-	<input type="text" id="keyboard_input2"/>
+	<form onsubmit="actionFnc(event);return false;">
+		<input type="text" id="keyboard_input"/>
+		<input type="text" id="keyboard_input2"/>
+		<button onclick="action" type="submit">Button</button>
+	</form>
 	<script type="text/javascript">
 		(function(){
 			var input1 = document.getElementById("keyboard_input");
@@ -27,7 +38,6 @@
 				console.log('change', keyword);
 			})
 		}());
-
 	</script>
 </body>
 

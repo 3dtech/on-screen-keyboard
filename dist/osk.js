@@ -313,6 +313,7 @@ class OSK_OSK {
 		this.value = "";
 		this.selectionStart = 0;
 		this.selectionEnd = 0;
+		this.pushtoOutput();
 	}
 
 	getCurrentKeyset () {
