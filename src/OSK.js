@@ -14,6 +14,7 @@ export default class OSK {
 		this.selectionEnd = 0;
 		this.output = false;
 		this.outputIsInputField = true;
+		this.outputSelectionDisabled = false;
 		this.value = "";
 
 		this.events = {
@@ -137,6 +138,10 @@ export default class OSK {
 		}
 	}
 
+	setOutputSelection (_new) {
+		this.outputSelectionDisabled = _new;
+	}
+
 	getFieldValue (field) {
 		if (!field) return "";
 		var type = this.getFieldType(field);
@@ -155,7 +160,6 @@ export default class OSK {
 	updateFromOutput () {
 		this.value = this.getFieldValue(this.output);
 		this.getCaretPosition();
-		
 	}
 
 	clear () {

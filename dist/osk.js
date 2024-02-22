@@ -157,6 +157,7 @@ class OSK_OSK {
 		this.selectionEnd = 0;
 		this.output = false;
 		this.outputIsInputField = true;
+		this.outputSelectionDisabled = false;
 		this.value = "";
 
 		this.events = {
@@ -280,6 +281,10 @@ class OSK_OSK {
 		}
 	}
 
+	setOutputSelection (_new) {
+		this.outputSelectionDisabled = _new;
+	}
+
 	getFieldValue (field) {
 		if (!field) return "";
 		var type = this.getFieldType(field);
@@ -298,7 +303,6 @@ class OSK_OSK {
 	updateFromOutput () {
 		this.value = this.getFieldValue(this.output);
 		this.getCaretPosition();
-		
 	}
 
 	clear () {
