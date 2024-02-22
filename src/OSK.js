@@ -14,7 +14,7 @@ export default class OSK {
 		this.selectionEnd = 0;
 		this.output = false;
 		this.outputIsInputField = true;
-		this.outputSelectionDisabled = false;
+		this.outputSelectionEnabled = false;
 		this.value = "";
 
 		this.events = {
@@ -137,9 +137,12 @@ export default class OSK {
 			});
 		}
 	}
-
+	/**
+	 * Set if updating the caret position from input field is enabled or not
+	 * @param {boolean} _new 
+	 */
 	setOutputSelection (_new) {
-		this.outputSelectionDisabled = _new;
+		this.outputSelectionEnabled = _new;
 	}
 
 	getFieldValue (field) {
@@ -337,7 +340,7 @@ export default class OSK {
 
 	getCaretPosition () {
 		if (this.output) {
-			if (this.outputIsInputField) {
+			if (this.outputIsInputField && this.outputSelectionEnabled) {
 				this.selectionStart = this.output.selectionStart;
 				this.selectionEnd = this.output.selectionEnd;
 			}
